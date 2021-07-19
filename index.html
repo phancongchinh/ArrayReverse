@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<script>
+    let theArray = [];
+    function addElement () {
+        let i=0;
+        do {
+            theArray[i] = prompt("Add an element!");
+            i++;
+        } while (confirm("Add more element?"))
+    }
+
+    function arrayReverse (array) {
+        let first = 0;
+        let last = array.length - 1;
+        while (first < last) {
+            let mediator = array[last];
+            array[last] = array[first];
+            array[first] = mediator;
+            first++;
+            last--;
+        }
+    }
+
+    function displayReversedArray (array) {
+        alert("The reversed array is " + array);
+    }
+
+    addElement();
+    arrayReverse(theArray);
+    displayReversedArray(theArray);
+
+</script>
+</body>
+</html>
